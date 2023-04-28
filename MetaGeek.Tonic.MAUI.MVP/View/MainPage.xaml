@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MetaGeek.Tonic.MAUI.MVP.ViewModel"
+             x:DataType="viewmodel:NetworksViewModel"
+             x:Class="MetaGeek.Tonic.MAUI.MVP.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,5">
+
+            <Button
+                Text="Load Network Details"
+                Command="{Binding LoadBtnCommand}"
+                HorizontalOptions="Center">
+            </Button>
+            <CollectionView>
+                <CollectionView.Header>
+                    <Grid
+                        ColumnDefinitions="*,*,*,*,*,*,*"
+                        BackgroundColor="Azure"
+                        ColumnSpacing="5">
+                        <Label Grid.Column="0" Text="SSID"/>
+                        <Label Grid.Column="1" Text="AIRTIME USAGE"/>
+                        <Label Grid.Column="2" Text="SIGNAL"/>
+                        <Label Grid.Column="3" Text="RADIOS"/>
+                        <Label Grid.Column="4" Text="CLIENTS"/>
+                        <Label Grid.Column="5" Text="EVENTS"/>
+                        <Label Grid.Column="6" Text="LAST SEEN"/>
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Label Text="{Binding SSID}"/>
+                            <Label Text="{Binding AirtimeUsage}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaGeek.Tonic.MAUI.MVP", "MetaGeek.Tonic.MAUI.MVP.csproj", "{9C68014A-082B-4D35-8900-AF7C576C7854}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetaGeek.WiFi.Core", "..\MetaGeek.WiFi.Core\MetaGeek.WiFi.Core.csproj", "{2086D0EF-72A6-4B12-9AFB-092BB505940D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C68014A-082B-4D35-8900-AF7C576C7854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C68014A-082B-4D35-8900-AF7C576C7854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C68014A-082B-4D35-8900-AF7C576C7854}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9C68014A-082B-4D35-8900-AF7C576C7854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C68014A-082B-4D35-8900-AF7C576C7854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C68014A-082B-4D35-8900-AF7C576C7854}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2086D0EF-72A6-4B12-9AFB-092BB505940D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2086D0EF-72A6-4B12-9AFB-092BB505940D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2086D0EF-72A6-4B12-9AFB-092BB505940D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2086D0EF-72A6-4B12-9AFB-092BB505940D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal
