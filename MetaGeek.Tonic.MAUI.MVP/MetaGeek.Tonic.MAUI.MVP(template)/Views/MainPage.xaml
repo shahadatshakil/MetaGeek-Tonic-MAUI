@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:MetaGeek.Tonic.MAUI.MVP.Model"
+             xmlns:prism="http://prismlibrary.com"
+             Title="MetaGeek"
+             x:Class="MetaGeek.Tonic.MAUI.MVP.MainPage">
+
+  <!-- For investigating region navigation-->
+  <ScrollView>
+    <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0">
+
+      <HorizontalStackLayout
+        HorizontalOptions="Center">
+        <Button Text="View 1"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="RegionView1"/>
+        
+        <Button Text="View 2"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="RegionView2"/>
+
+        <Button Text="View With List"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="ViewWithList"/>
+        
+      </HorizontalStackLayout>
+
+      <Grid
+        WidthRequest="500"
+        HeightRequest="500"
+        HorizontalOptions="Center">
+
+        <ContentView BackgroundColor="AliceBlue"
+                     prism:RegionManager.RegionName="TestRegion"/>
+      </Grid>
+
+    </VerticalStackLayout>
+  </ScrollView>
+
+</ContentPage>
