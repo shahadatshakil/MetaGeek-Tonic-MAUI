@@ -200,4 +200,17 @@ namespace MetaGeek.WiFi.Core.Events
     public class ContinuoiusPcapWriteIterationCompletedEvent : PubSubEvent<string>
     {
     }
+
+    public class ClientWiFiEvent : PubSubEvent<WiFiEventMetaData>
+    {
+    }
+
+    public class BssidUpdatedOnClientEvent : PubSubEvent<IClientDetails>
+    {
+    }
+
+    public class ClientDetailsEvent : PubSubEvent<ClientMetaData>
+    {
+    }
+
 }
