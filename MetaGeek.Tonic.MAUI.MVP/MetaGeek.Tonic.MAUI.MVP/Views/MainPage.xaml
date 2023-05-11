@@ -6,36 +6,58 @@
              Title="MetaGeek"
              x:Class="MetaGeek.Tonic.MAUI.MVP.MainPage">
 
-  <!-- For investigating region navigation-->
   <ScrollView>
+
     <VerticalStackLayout
             Spacing="25"
-            Padding="30,0">
+            Padding="30,5">
 
-      <HorizontalStackLayout
-        HorizontalOptions="Center">
-        <Button Text="View 1"
-                Command="{Binding NavigateCommand}"
-                CommandParameter="RegionView1"/>
-        
-        <Button Text="View 2"
-                Command="{Binding NavigateCommand}"
-                CommandParameter="RegionView2"/>
+      <Button
+        Text="Load Network Details"
+        Command="{Binding LoadBtnCommand}"
+        HorizontalOptions="Center"/>
 
-        <Button Text="View With List"
-                Command="{Binding NavigateCommand}"
-                CommandParameter="ViewWithList"/>
-        
-      </HorizontalStackLayout>
+      <ListView ItemsSource="{Binding MyList}">
+        <ListView.Header>
+          <Grid ColumnDefinitions="2*,2*,*,*,*,*,*"
+                BackgroundColor="Azure"
+                ColumnSpacing="5">
+            <Label HorizontalOptions="Center" Grid.Column="0" Text="SSID"/>
+            <Label HorizontalOptions="Center" Grid.Column="1" Text="AIRTIME USAGE"/>
+            <Label HorizontalOptions="Center" Grid.Column="2" Text="SIGNAL"/>
+            <Label HorizontalOptions="Center" Grid.Column="3" Text="RADIOS"/>
+            <Label HorizontalOptions="Center" Grid.Column="4" Text="CLIENTS"/>
+            <Label HorizontalOptions="Center" Grid.Column="5" Text="EVENTS"/>
+            <Label HorizontalOptions="Center" Grid.Column="6" Text="LAST SEEN"/>
+          </Grid>
+        </ListView.Header>
 
-      <Grid
-        WidthRequest="500"
-        HeightRequest="500"
-        HorizontalOptions="Center">
-
-        <ContentView BackgroundColor="AliceBlue"
-                     prism:RegionManager.RegionName="TestRegion"/>
-      </Grid>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+            <Grid ColumnDefinitions="2*,2*,*,*,*,*,*"
+                  Padding="5">
+              <Label HorizontalOptions="Center" Text="{Binding SSID}"/>
+              <Grid Grid.Column="1"
+                    ColumnSpacing="10"
+                    ColumnDefinitions="40,*">
+                  <Label Text="{Binding AirtimeUsagePercantage,StringFormat='{0}%'}"/>
+                  <ProgressBar Grid.Column="1"
+                               Progress="{Binding AirtimeUsage}"
+                               ProgressColor="Green"
+                               MinimumHeightRequest="20"/>
+                </Grid>
+              
+              <Label HorizontalOptions="Center" Grid.Column="2" Text="{Binding Signal}"/>
+              <Label HorizontalOptions="Center" Grid.Column="3" Text="{Binding Radios}"/>
+              <Label HorizontalOptions="Center" Grid.Column="4" Text="{Binding Clients}"/>
+              <Label HorizontalOptions="Center" Grid.Column="5" Text="{Binding Events}"/>
+              <Label HorizontalOptions="Center" Grid.Column="6" Text="{Binding LastSeen}"/>
+            </Grid>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
 
     </VerticalStackLayout>
   </ScrollView>

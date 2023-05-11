@@ -5,25 +5,45 @@ using System.Collections.ObjectModel;
 
 namespace MetaGeek.Tonic.MAUI.MVP.ViewModel
 {
-    // for investigating region navigation
-    public class MainPageViewModel : BindableBase
+    class MainPageViewModel : BindableBase
     {
-        private INavigationService _navigationService { get; }
-        private IRegionManager _regionManager { get; }
-        public MainPageViewModel(INavigationService navigationService, IRegionManager regionManager)
-        {
-            _navigationService = navigationService;
-            _regionManager = regionManager;
+        public DelegateCommand LoadBtnCommand { get; }
 
-            NavigateCommand = new DelegateCommand<string>(OnNavigateCommandExecuted);
+        private double _count;
+
+        private ObservableCollection<NetworkAttributes> myList;
+
+        public ObservableCollection<NetworkAttributes> MyList
+        {
+            get { return myList; }
+            set
+            {
+                myList = value;
+                SetProperty(ref myList, value);
+            }
         }
 
-        public DelegateCommand<string> NavigateCommand { get; }
-
-        private void OnNavigateCommandExecuted(string uri)
+        public MainPageViewModel()
         {
-            _regionManager.RequestNavigate("TestRegion", uri);
+            LoadBtnCommand = new DelegateCommand(OnLoadBtnClicked);
+            myList = new ObservableCollection<NetworkAttributes>();
+            _count = 0;
+        }
+
+        void OnLoadBtnClicked()
+        {
+            _count = (_count + 1) % 10;
+            MyList.Add(new NetworkAttributes
+            {
+                SSID = "Test" + _count.ToString(),
+                AirtimeUsage = _count/10,
+                AirtimeUsagePercantage = _count * 10,
+                Signal = "Test" + _count.ToString(),
+                Radios = "Test" + _count.ToString(),
+                Clients = "Test" + _count.ToString(),
+                Events = "Test" + _count.ToString(),
+                LastSeen = "Test" + _count.ToString()
+            });
         }
     }
-
 }

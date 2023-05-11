@@ -10,7 +10,8 @@ namespace MetaGeek.Tonic.MAUI.MVP.Model
     public class NetworkAttributes
     {
         public string SSID { get; set; }
-        public string AirtimeUsage { get; set; }
+        public double AirtimeUsage { get; set; }
+        public double AirtimeUsagePercantage { get;set; }   
         public string Signal { get; set; }
         public string Radios { get; set; } 
         public string Clients { get; set; }

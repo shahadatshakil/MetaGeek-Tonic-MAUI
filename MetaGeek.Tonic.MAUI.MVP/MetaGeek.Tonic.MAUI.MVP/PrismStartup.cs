@@ -1,10 +1,7 @@
 ﻿using DryIoc;
 using MetaGeek.Tonic.MAUI.MVP;
 using MetaGeek.Tonic.MAUI.MVP.ViewModel;
-using MetaGeek.Tonic.MAUI.MVP_template_.ViewModels;
-using MetaGeek.Tonic.MAUI.MVP_template_.Views;
 using Prism.Ioc;
-using PrismMauiRegionNavigation.Views;
 
 namespace MetaGeek.Tonic.MAUI.MVP_template_
 {
@@ -19,9 +16,6 @@ namespace MetaGeek.Tonic.MAUI.MVP_template_
         private static void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<MainPage,MainPageViewModel>()
-                         .RegisterForRegionNavigation<RegionView1,RegionView1ViewModel>()
-                         .RegisterForRegionNavigation<RegionView2,RegionView2ViewModel>()
-                         .RegisterForRegionNavigation<ViewWithList,ViewWithListViewModel>()
                          .RegisterInstance(SemanticScreenReader.Default);
         }
     }
